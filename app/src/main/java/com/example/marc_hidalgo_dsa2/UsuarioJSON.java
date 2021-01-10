@@ -1,4 +1,4 @@
-package com.example.marc_hidalgo_dsa2;
+GIGIT INNpackage com.example.marc_hidalgo_dsa2;
 
 import java.io.Serializable;
 
