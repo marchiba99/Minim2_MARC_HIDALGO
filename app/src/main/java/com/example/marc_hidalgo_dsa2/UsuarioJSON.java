@@ -1,4 +1,5 @@
-GIGIT INNpackage com.example.marc_hidalgo_dsa2;
+package com.example.marc_hidalgo_dsa2;
+
 
 import java.io.Serializable;
 
@@ -9,8 +10,8 @@ public class UsuarioJSON implements Serializable {
     private String email;
     private int x;
     private int y;
-    private boolean genero;
     private int key;
+    private boolean genero;
     //private ArrayList<ObjetoJSON> inventariol;
     //private ArrayList<MonstruoJSON> monstruosl;
 
@@ -26,7 +27,7 @@ public class UsuarioJSON implements Serializable {
     }
 
 
-    public String getEmail() {
+    /*public String getEmail() {
         return email;
     }
 
@@ -41,23 +42,22 @@ public class UsuarioJSON implements Serializable {
     public void setGenero(boolean genero) {
         this.genero = genero;
     }
-
+*/
     public UsuarioJSON() {
     }
 
     public UsuarioJSON(String nombre, String password) {
         this.password = password;
         this.nombre = nombre;
-        //monstruosl = new ArrayList<MonstruoJSON>();
     }
 
-    public UsuarioJSON(String nombre, String password, String email, boolean genero) {
+    /*public UsuarioJSON(String nombre, String password, String email, boolean genero) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.genero = genero;
 
-    }
+    }*/
 
 
 
