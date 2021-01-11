@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter RecyclerAdapter;
     APIservice userService;
+    public static Context context;
     private RecyclerView.LayoutManager layoutManager;
 
     private ProgressBar progressBar;
@@ -52,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         //Configuracion del retrofit
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        //Attaching Interceptor to a client
+
         OkHttpClient client = new OkHttpClient().newBuilder().addInterceptor(interceptor).build();
         retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.github.com/")
@@ -95,5 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        context = getApplicationContext();
+        imagen = findViewById(R.id.imageView);
+        Glide.with(context).load(imagen).into(imagen);
+
     }
 }
