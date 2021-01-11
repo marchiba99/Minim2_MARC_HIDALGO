@@ -3,21 +3,12 @@ package com.example.marc_hidalgo_dsa2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import java.util.Random;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Splash extends AppCompatActivity {
     private ProgressBar splashProgress;
@@ -37,8 +28,9 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 //Open the ListActivity
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+                Intent intent = new Intent(getApplicationContext(), BuscarUser.class);
                 startActivity(intent);
+                finish();
             }
         }, 1000 * loadtime);
 
